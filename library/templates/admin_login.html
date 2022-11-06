@@ -5,48 +5,49 @@
 <link rel="stylesheet" href="../static/l.css">
 {% endblock %}
 {% block body %}
-<div class="container">
-<br>
-<h1 class="text-center">Admin Login</h1><br>
-<p class="text-center"><b>Note:</b> Only the admin can login from here. No student will be allowed to login.</p>
-    <form method="POST"> {% csrf_token %}
-
+<div style="background-image:url(../static/pexels-gdtography-950241.jpg) ; font-family:'Times New Roman', Times, serif;"><div class="container">
     
-
-
-<form method="POST">
-    <div class="whole">
-
-
-        <div class="imgcontainer">
-            <img src=
-"https://tse4.mm.bing.net/th?id=OIP.dfjUX4N57Eks6onIbRg0WwHaH9&pid=Api&P=0"
-                alt="Avatar" class="avatar">
-        </div>
-
-        <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-
-            <button type="submit">Login</button>
-            <input type="checkbox" checked="checked"> Remember me
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-  </div>
-    </form>
-{% endblock %}
-{% block js %}
-<script>
-    {% if alert %}
-    alert("Invalid Username or Password.")
-    document.location = "/admin_login"
-    {% endif %}
-</script>
+    
+    
+        
+    
+    
+    <form method="POST">
+        <div class="whole"><br>
+            <h1 class="text-center">Admin Login</h1><br>
+    <p class="text-center"><b>Note:</b> Only the admin can login from here. No student will be allowed to login.</p>
+        <form method="POST"> {% csrf_token %}
+    
+            <div class="imgcontainer">
+                <img src=
+    "https://tse4.mm.bing.net/th?id=OIP.dfjUX4N57Eks6onIbRg0WwHaH9&pid=Api&P=0"
+                    alt="Avatar" class="avatar">
+            </div>
+    
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+    
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+    
+                <button type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+    
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </div>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    {% endblock %}
+    {% block js %}
+    <script>
+        {% if alert %}
+        alert("Invalid Username or Password.")
+        document.location = "/admin_login"
+        {% endif %}
+    </script></div>
 {% endblock %}
