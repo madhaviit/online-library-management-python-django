@@ -1,0 +1,260 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../static/style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://library.iiti.ac.in/xmlrpc.php">
+
+<title>Library Collection – विद्यार्जन संसाधन केंद्र | Learning Resource Center</title>
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="विद्यार्जन संसाधन केंद्र | Learning Resource Center » Feed"
+    href="http://library.iiti.ac.in/?feed=rss2">
+<link rel="alternate" type="application/rss+xml"
+    title="विद्यार्जन संसाधन केंद्र | Learning Resource Center » Comments Feed"
+    href="http://library.iiti.ac.in/?feed=comments-rss2">
+<script type="text/javascript">
+    window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "http:\/\/library.iiti.ac.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.15" } };
+    !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) ? !1 : !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357, 56424, 55356, 57340], [55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357, 56424, 55356, 57340]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+</script>
+<script src="http://library.iiti.ac.in/wp-includes/js/wp-emoji-release.min.js?ver=5.2.15" type="text/javascript"
+    defer=""></script>
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+<link rel="stylesheet" id="smartline-custom-fonts-css"
+    href="http://library.iiti.ac.in/wp-content/themes/smartline-lite/css/custom-fonts.css?ver=20180413" type="text/css"
+    media="all">
+<link rel="stylesheet" id="wp-block-library-css"
+    href="http://library.iiti.ac.in/wp-includes/css/dist/block-library/style.min.css?ver=5.2.15" type="text/css"
+    media="all">
+<link rel="stylesheet" id="smartline-lite-stylesheet-css"
+    href="http://library.iiti.ac.in/wp-content/themes/smartline-lite/style.css?ver=1.6.7" type="text/css" media="all">
+<style id="smartline-lite-stylesheet-inline-css" type="text/css">
+    .site-title,
+    .site-description {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+</style>
+<link rel="stylesheet" id="genericons-css"
+    href="http://library.iiti.ac.in/wp-content/themes/smartline-lite/css/genericons/genericons.css?ver=3.4.1"
+    type="text/css" media="all">
+<!--[if lt IE 9]>
+        <script type='text/javascript' src='http://library.iiti.ac.in/wp-content/themes/smartline-lite/js/html5shiv.min.js?ver=3.7.3'></script>
+        <![endif]-->
+<script type="text/javascript" src="http://library.iiti.ac.in/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+<script type="text/javascript"
+    src="http://library.iiti.ac.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var smartline_menu_title = { "text": "Menu" };
+        /* ]]> */
+</script>
+<script type="text/javascript"
+    src="http://library.iiti.ac.in/wp-content/themes/smartline-lite/js/navigation.js?ver=20210324"></script>
+<link rel="https://api.w.org/" href="http://library.iiti.ac.in/index.php?rest_route=/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://library.iiti.ac.in/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://library.iiti.ac.in/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.2.15">
+<link rel="canonical" href="http://library.iiti.ac.in/?page_id=43">
+<link rel="shortlink" href="http://library.iiti.ac.in/?p=43">
+<link rel="alternate" type="application/json+oembed"
+    href="http://library.iiti.ac.in/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Flibrary.iiti.ac.in%2F%3Fpage_id%3D43">
+<link rel="alternate" type="text/xml+oembed"
+    href="http://library.iiti.ac.in/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Flibrary.iiti.ac.in%2F%3Fpage_id%3D43&amp;format=xml">
+<style type="text/css">
+    @media only screen and (min-width: 60em) {
+        #content {
+            float: right;
+        }
+
+        #sidebar {
+            margin-left: 0;
+            margin-right: 70%;
+            background: -moz-linear-gradient(left, #f3f3f3 0%, #e6e6e6 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f3f3f3), color-stop(100%, #e6e6e6));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left, #f3f3f3 0%, #e6e6e6 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left, #f3f3f3 0%, #e6e6e6 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(left, #f3f3f3 0%, #e6e6e6 100%);
+            /* IE10+ */
+            background: linear-gradient(to right, #f3f3f3 0%, #e6e6e6 100%);
+            /* W3C */
+        }
+
+    }
+
+    @media only screen and (max-width: 70em) {
+        #sidebar {
+            margin-right: 67%;
+        }
+    }
+</style>
+<style type="text/css" id="custom-background-css">
+    body.custom-background {
+        background-image: url("http://library.iiti.ac.in/wp-content/themes/smartline-lite/images/background.png");
+        background-position: left top;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+    }
+</style>
+<link rel="icon" href="http://library.iiti.ac.in/wp-content/uploads/2021/11/fav.ico" sizes="32x32">
+<link rel="icon" href="http://library.iiti.ac.in/wp-content/uploads/2021/11/fav.ico" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://library.iiti.ac.in/wp-content/uploads/2021/11/fav.ico">
+<meta name="msapplication-TileImage" content="http://library.iiti.ac.in/wp-content/uploads/2021/11/fav.ico">
+<style type="text/css" id="wp-custom-css">
+    /*
+        You can add your own CSS here.
+        
+        Click the help icon above to learn more.
+        */
+</style>
+<script type="text/javascript" async="" src="//s10.histats.com/js15_as.js"></script>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100 " style="position:absolute; top:0; left:0;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">LRC</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                &nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_login/">Admin Login</a>
+                </li>
+                &nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="nav-link active" href="/student_registration/">Register As Student</a>
+                </li>
+                &nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="nav-link active" href="/student_login/">Student Login</a>
+                </li>
+                &nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about/">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="content" class="primary" role="main">
+
+
+
+    <div id="post-43" class="post-43 page type-page status-publish hentry">
+
+        <h1 class="page-title">Library Collection</h1>
+        <div class="entry clearfix">
+
+            <p><strong style="font-size: 0.95em;"><br></strong></p>
+
+
+
+            <div class="entry clearfix">
+                <p>The Library has a collection of 38150+ books at present. These include books on all relevant subjects
+                    for teaching, reference and research in addition to fiction, literature and general interest books
+                    to take care of the leisure and recreational reading needs of users. The Library has also developed
+                    special collections such as Gandhian Studies, Hindi books, Children’s books, Matrubhasha collection,
+                    etc.</p>
+                <p>Online Information Resources are vital for academic and research institutes in today’s knowledge
+                    economy. The library provides its users access to more than 2580+ e-journals. Further, as a member
+                    to the E-Shodhsindhu Consortium, IITI academic community is getting access to more than 6110
+                    e-Journals and some databases. In addition to this, the Library provide access to bibliographic
+                    databases such as SciFinder Scholar, Scopus &nbsp; and MathSciNet, among others. The Reading Hall
+                    provides a peaceful environment conducive to study.</p>
+            </div>
+
+
+
+            <p><strong>Print Newspapers:</strong></p>
+
+
+
+            <table class="wp-block-table">
+                <tbody>
+                    <tr>
+                        <td><strong>S.No.</strong></td>
+                        <td><strong>Newspaper Title</strong></td>
+                        <td><strong>Frequency</strong></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Dainik Bhaskar (Hindi)</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Free Press</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nai Dunia (Hindi)</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Patrika (Hindi)</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Raj Express (Hindi)</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>The Time of India</td>
+                        <td>Daily</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+<div id="logo" class="clearfix" >
+
+    <a href="http://library.iiti.ac.in/" class="custom-logo-link w-100" rel="home"><img width="1295" height="180" style="padding-top: 3rem; position:relative;" src="http://library.iiti.ac.in/wp-content/uploads/2021/11/Screenshot-67.png" class="custom-logo" alt="विद्यार्जन संसाधन केंद्र | Learning Resource Center" srcset="http://library.iiti.ac.in/wp-content/uploads/2021/11/Screenshot-67.png 1295w, http://library.iiti.ac.in/wp-content/uploads/2021/11/Screenshot-67-300x42.png 300w, http://library.iiti.ac.in/wp-content/uploads/2021/11/Screenshot-67-768x107.png 768w, http://library.iiti.ac.in/wp-content/uploads/2021/11/Screenshot-67-1024x142.png 1024w" sizes="(max-width: 1295px) 100vw, 1295px"></a>				
+<p class="site-title"><a href="http://library.iiti.ac.in/" rel="home">विद्यार्जन संसाधन केंद्र | Learning Resource Center</a></p>
+
+        
+<p class="site-description"> भारतीय प्रौद्योगिकी संस्थान इंदौर | Indian Institute of Technology Indore</p>
+
+
+</div>
+{% endblock %}
