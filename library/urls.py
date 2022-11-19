@@ -18,7 +18,10 @@ urlpatterns = [
     path("admin_login/", views.admin_login, name="admin_login"),
     path("logout/", views.Logout, name="logout"),
 
+    path("req_delete_book/<int:myid>/", views.req_delete_book, name="req_delete_book"),
     path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
     path("delete_student/<int:myid>/", views.delete_student, name="delete_student"),
     path("about/",views.about, name="about"),
+    path("request_book/",views.request_book,name="request_book"),
+    path("requested_books/",views.view_req_books,name="requested_books")
 ]

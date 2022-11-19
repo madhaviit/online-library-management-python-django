@@ -1,0 +1,30 @@
+{% extends 'admin_navbar.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center"><u>Requested Books List</u></h1>
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for RequestedBook in RequestedBooks %}
+            <tr>
+                <td>{{forloop.counter}}.</td>
+                <td>{{RequestedBook.name}}</td>
+                <td>{{RequestedBook.author}}</td>
+                <td><a href="/req_delete_book/{{RequestedBook.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

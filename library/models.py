@@ -31,3 +31,7 @@ class IssuedBook(models.Model):
     isbn = models.CharField(max_length=13)
     issued_date = models.DateField(auto_now=True)
     expiry_date = models.DateField(default=expiry)
+
+class RequestedBook(models.Model):
+    name = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)

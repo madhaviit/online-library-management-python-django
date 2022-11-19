@@ -1,0 +1,83 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../static/l.css">
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:absolute; top:0; left:0;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LRC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="/admin_login/">Admin Login</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="/student_registration/">Register As Student</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="/student_login/">Student Login</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="https://books.google.co.in/">Browse Books</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="/request_book/">Request Book</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" href="/about/">About</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><br><br><br><br><br>
+
+<div class="container">
+    <form method="POST"> {% csrf_token %}
+    <div class="row mt-4">
+        <div class="form-group col-md-12 text-center">
+            <label><u style="font-weight: bold;">Book Name</u></label>
+            <input align="middle" type="text" class="form-control mt-2" name="name" placeholder="Enter name of the Book"  required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12 text-center">
+            <label><u style="font-weight: bold;">Author Name</u></label>
+            <input type="text" class="form-control mt-2" name="author" placeholder="Enter name of the Author"  required>
+        </div>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-outline-primary mt-4 text-center" style="margin-left:auto; margin-right:auto;">Request Book</button>
+
+</div>
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Book is requested successfully.")
+    document.location = ""
+    {% endif %}
+</script>
+{% endblock %}

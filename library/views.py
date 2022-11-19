@@ -30,6 +30,11 @@ def view_books(request):
     return render(request, "view_books.html", {'books':books})
 
 @login_required(login_url = '/admin_login')
+def view_req_books(request):
+    requestBooks = RequestedBook.objects.all()
+    return render(request, "requested_books.html", {'RequestedBooks':requestBooks})
+
+@login_required(login_url = '/admin_login')
 def view_students(request):
     students = Student.objects.all()
     return render(request, "view_students.html", {'students':students})
@@ -95,6 +100,18 @@ def student_issued_books(request):
 def profile(request):
     return render(request, "profile.html")
 
+
+@login_required(login_url = '/student_login')
+def request_book(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        author = request.POST['author']
+        requested_books = RequestedBook.objects.create(name=name, author=author)
+        requested_books.save()
+        alert = True
+        return render(request, "request_book.html", {'alert':alert})
+    return render(request, "request_book.html")
+
 @login_required(login_url = '/student_login')
 def edit_profile(request):
     student = Student.objects.get(user=request.user)
@@ -119,7 +136,12 @@ def edit_profile(request):
 def delete_book(request, myid):
     books = Book.objects.filter(id=myid)
     books.delete()
-    return redirect("/view_books")
+    return redirect("/requested_books")
+
+def req_delete_book(request, myid):
+    requestedBooks = RequestedBook.objects.filter(id=myid)
+    requestedBooks.delete()
+    return redirect("/requested_books")
 
 def delete_student(request, myid):
     students = Student.objects.filter(id=myid)
